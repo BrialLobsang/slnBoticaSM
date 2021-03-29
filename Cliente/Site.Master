@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Cliente.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Botica Señor de los Milagros</title>
+    <link rel="stylesheet" href="css/estilosIndex.css" />
+    <link rel="stylesheet" href="css/fontello.css" />
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <header>
+         <input type="checkbox" id="btn-menu" />
+         <label for="btn-menu"><img src="img/menu.png" alt="" /></label>
+         <nav class="menu">
+             <ul>
+                 <li><a href="#home">Mantenimiento<span class="icon-down-open"></span></a>
+                     <ul>
+                         <li><a runat="server" href="~/Productos">Productos</a></li>
+                         <li><a runat="server" href="~/Empleados">Empleados</a></li>
+                         <li><a runat="server" href="~/Categoria">Categoria Producto</a></li>
+                         <li><a runat="server" href="~/Provedores">Provedores</a></li>
+                         <li><a runat="server" href="~/Clientes">Clientes</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#news">Ventas<span class="icon-down-open"></span></a>
+                     <ul>
+                         <li><a runat="server" href="~/Ventas">Registrar Venta</a></li>
+                         <li><a runat="server" href="~/ListaVentas">Lista de Ventas</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#about">Caja</a></li>
+             </ul>
+            </nav>
+        </header>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Desarrollado por el grupo "Los Mantis" / Botica Señor de los Milagros ASP.NET</p>
+            </footer>
+        </div>
+</body>
+</html>
